@@ -20,7 +20,7 @@ const CryptoCard = ({
   }[];
 }) => {
   return (
-    <div className="text-white rounded-md bg-gray-950/[0.8] sm:w-96 px-6 py-6">
+    <div className="text-white rounded-md bg-customDark sm:w-96 px-6 py-6">
       <h1 className="text-base text-zinc-200 font-semibold">{title}</h1>
       <div className="flex flex-col space-y-5 mt-4">
         {data.map((item, index) => {

@@ -4,6 +4,7 @@ import { cn, formatLargeNumber } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpDown } from "lucide-react";
 
 export type CryptoDatatype = {
   id: number;
@@ -51,8 +52,16 @@ export const columns: ColumnDef<CryptoDatatype>[] = [
   },
   {
     accessorKey: "price",
-    header: () => {
-      return <div className="flex flex-row justify-center">Price</div>;
+    header: ({ column }) => {
+      return (
+        <button
+          className="flex flex-row justify-center items-center"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Price
+          <ArrowUpDown className="w-4 h-4 flex-shrink-0" />
+        </button>
+      );
     },
     cell: ({ row }) => {
       const { price, symbol } = row.original;
@@ -68,8 +77,16 @@ export const columns: ColumnDef<CryptoDatatype>[] = [
   },
   {
     accessorKey: "marketCap",
-    header: () => {
-      return <div className="flex flex-row justify-center">Market Cap</div>;
+    header: ({ column }) => {
+      return (
+        <button
+          className="flex flex-row justify-center items-center"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Market Cap
+          <ArrowUpDown className="h-w w-4 flex-shrink-0" />
+        </button>
+      );
     },
     cell: ({ row }) => {
       const { marketCap, symbol } = row.original;

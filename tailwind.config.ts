@@ -10,7 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        customDark: "rgb(14, 15, 20)",
+        customDark: "rgb(20, 21, 27)",
+        customNav: "rgb(14, 15, 20)",
         customSearchColor: "rgb(32, 33, 39)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -60,5 +61,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")],
 } satisfies Config;
